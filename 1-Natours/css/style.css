@@ -7,16 +7,25 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
+/* Defining the default font-size*/
+/*  1 rem = 10px*/
+html {
+    font-size: 10px;
+}
+
+/* Defining the default font-family, font-size*/
 body{
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 20px;
+    padding: 2rem;
+
+    box-sizing: border-box;
 }
 
 .header {
@@ -33,30 +42,30 @@ body{
     clip-path: polygon(0 0, 100% 0, 100% 69%, 0 80vh, 0 51%);
 }
 
-.logo-box{
+.header__logo-box{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
-.logo{
-    height: 35px;
+.header__logo{
+    height: 3.5rem;
 }
 
 .heading-primary{
     color: white;
     text-transform: uppercase;
-    margin-bottom: 45px;
+    margin-bottom: 4.5rem;
 }
 
-.heading-primary-main{
+.heading-primary--main{
     display: block;
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 600;
-    letter-spacing: 25px;
+    letter-spacing: 2.5rem;
 
     animation-name: moveInLeft;
-    animation-duration: 1s;
+    animation-duration: 2s;
    
 
     /*
@@ -64,20 +73,20 @@ body{
     */
 }
 
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 10px;
+    letter-spacing: 1.75;
     font-family: 'Gloria Hallelujah', cursive;
     text-transform: lowercase;
 
     animation-name: moveInRight;
-    animation-duration: 1s;
+    animation-duration: 2s;
    
 }
 
-.text-box{
+.header__text-box{
     position: absolute;
     top: 35%;
     left: 50%;
@@ -89,25 +98,27 @@ body{
 .btn:visited {
         text-transform: uppercase;
         text-decoration: none;
-        padding: 15px 40px;
+        padding: 1.5rem 4rem;
         display: inline-block;
-        border-radius: 100px;
+        border-radius: 10rem;
         transition: all .2s;
         position: relative;
+}
 
-        animation-name: moveInBottom;
-        animation-duration: 1s;
+.btn--animated {
+    animation-name: moveInBottom;
+    animation-duration: 1s;
 }
 
 .btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2)
 }
   
 /*When we click*/
 .btn:active{
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2)
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2)
 }
 
 .btn-white {
@@ -144,12 +155,12 @@ body{
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px)
+        transform: translateX(-10rem)
     }
 
     75% {
         opacity: 0.5;
-        transform: translateX(20px)
+        transform: translateX(2rem)
     }
 
     100% {
@@ -161,12 +172,12 @@ body{
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px)
+        transform: translateX(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
     }
 
     75% {
         opacity: 0.5;
-        transform: translateX(-20px)
+        transform: translateX(-2rem)
     }
 
     100% {
@@ -178,11 +189,11 @@ body{
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(100px)
+        transform: translateY(10rem)
     }
 
     100% {
         opacity: 1;
         transform: translate(0);
     }
-}
+}       
