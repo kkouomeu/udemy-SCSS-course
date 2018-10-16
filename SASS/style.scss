@@ -1,83 +1,114 @@
+/* --------------------- root SCSS ------------------ */
 * {
-    margin : 0;
-    padding : 0;
+  margin : 0;
+  padding : 0;
+}
+
+/* --------------------- VARIABLES ------------------ */
+
+$color-primary : #f9ed69; //yellow color
+$color-secondary : #f4cb42; // orange
+$color-tertiary : #f141f4; //pink
+$color-cool : #3f8c6c; //green
+$color-grey : #2b2a3a; //grey
+$color-peace : white; //white
+$color-nav : #dcede6; //light green
+
+$width-button : 150px;
+
+
+/* --------------------- MIXINS ------------------ */
+
+@mixin clearfix {
+  //Clear fix is use to fix color in header | float right or left
+  &::after {
+    content : "";
+    clear : both;
+    display : table;
   }
-  
-  $color-primary : #f9ed69; //yellow color
-  $color-secondary : #f4cb42; // orange
-  $color-tertiary : #f141f4; //pink
-  $color-cool : #3f8c6c; //green
-  $color-grey : #2b2a3a; //grey
-  $color-peace : white; //white
-  $color-nav : #dcede6; //light green
-  
-  $width-button : 150px;
-  
-  nav {
-    margin : 20px;
-    background-color : $color-nav;
-    
-    //Clear fix is use to fix color in header float right or left
-      &::after {
-      content : "";
-      clear : both;
-      display : table;
-      } 
-  }
-  
-  .navigation{
-    list-style : none;
-    float: left;
-    
-    li {
-      display : inline-block;
-      margin-left : 30px;
-      
-      &:first-child {
-        margin-left : 0
-      }
-      
-      a {
-        text-decoration : none;
-        text-transform : uppercase;
-        color : $color-grey;
-      }
-    }
-  }
-  
-  
-  .buttons {
-    float : right;
-  } 
-  
-  .btn-main:link,
-  .btn-hot:link {
-    padding : 10px;
+}
+
+@mixin style-link-text($color) {
+  text-decoration : none;
+  text-transform : uppercase;
+  color : $color;
+}
+
+
+/* --------------------- FUNCTIONS ------------------ */
+
+@function divide($a, $b) {
+  @return $a / $b
+}
+
+
+
+
+/* --------------------- EXTENDS ------------------ */
+
+%btn-placeholder {
+  padding : 10px;
+  display : inline-block;
+  text-align : center;
+  border-radius : 100px;
+  width : $width-button;
+
+  @include style-link-text( $color-peace);
+}
+
+/* --------------------- SASS ------------------ */
+
+nav {
+  margin : divide(40 , 2) * 1px; //20px
+  background-color : $color-nav;
+
+  @include clearfix;
+}
+
+
+.navigation{
+  list-style : none;
+  float: left;
+
+  li {
     display : inline-block;
-    text-align : center;
-    text-decoration : none;
-    border-radius : 100px;
-    text-transform : uppercase;
-    color : $color-peace;
-    width : $width-button;
-  }
-  
-  .btn-main {
-    &:link {
-      background-color : $color-cool;
+    margin-left : 30px;
+
+    &:first-child {
+      margin-left : 0
     }
-    
-    &:hover {
-      background-color : lighten($color-cool,20%);
+
+    a {
+      @include style-link-text( $color-grey);
     }
   }
-  
-  .btn-hot {
-    &:link {
-      background-color : $color-secondary;
-    }
-    
-    &:hover {
-      background-color : lighten($color-secondary,20%);
-    }
+}
+
+
+.buttons {
+  float : right;
+}
+
+
+.btn-main {
+  &:link {
+    @extend %btn-placeholder;
+    background-color : $color-cool;
   }
+
+  &:hover {
+    background-color : lighten($color-cool,20%);
+  }
+}
+
+
+.btn-hot {
+  &:link {
+    @extend %btn-placeholder;
+    background-color : $color-secondary;
+  }
+
+  &:hover {
+    background-color : lighten($color-secondary,20%);
+  }
+}
