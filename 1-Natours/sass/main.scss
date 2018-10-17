@@ -1,239 +1,36 @@
-/*----------- IMPORTS ----------*/
+/*----------- start Imports ----------*/
+
+//fonts
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 
+//abstracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+//base
+@import "base/base";
+@import "base/animation";
+@import "base/typography";
+@import "base/utilities";
+
+//pages
+@import "pages/home";
+
+//components
+@import "components/buttons";
+
+//layouts
+@import "layouts/header";
+@import "layouts/grid";
 
 
-/* //////////////////
-------------------- Fonction toute prête pour gérer Rem et Pixel en fonction des supports des navigateurs.
-.font-size(@sizeValue) {
-  @remValue: @sizeValue;
-  @pxValue: (@sizeValue * 10);
-  font-size: ~"@{pxValue}px";
-  font-size: ~"@{remValue}rem";
-}
-
-------Exemple d'application
-p {
-    .font-size(1.2);
-}
-////////////////////
-*/
-
-
-/*
-    COLORS :
-
-    light green : #7ed56f
-    medium green : #55c57a
-    dark green : #28b485
-*/
-
-$color-primary : #55c57a;
-$color-primary-light : #5075d5;
-$color-primary-dark : #b46296;
-
-$color-grey-dark : #777;
+/*----------- end Imports ----------*/
 
 
 
-/*------------------------------*/
-
-*,
-*::after,
-*::before{
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-/* Defining the default font-size*/
-/*  1 rem = 10px*/
-html {
-  font-size: 62.5%;
-}
-
-/* Defining the default font-family, font-size*/
-body{
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: $color-grey-dark;
-  padding: 2rem;
-
-  box-sizing: border-box;
-}
-
-.header {
-  height: 95vh;
-  /*noinspection CssOptimizeSimilarProperties*/
-  background-image:linear-gradient(
-                  to right bottom,
-                  rgba($color-primary-light,0.5),
-                  rgba($color-primary-dark,0.8)),
-  url(../img/hero.jpg);
-  background-size: cover;
-  /*noinspection CssOptimizeSimilarProperties*/
-  background-position: top;
-  position: relative;
-
-  clip-path: polygon(0 0, 100% 0, 100% 69%, 0 80vh, 0 51%);
-}
-
-.header__logo-box{
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo{
-  height: 3.5rem;
-}
-
-.heading-primary{
-  color: white;
-  text-transform: uppercase;
-  margin-bottom: 4.5rem;
-}
-
-.heading-primary--main{
-  display: block;
-  font-size: 4rem;
-  font-weight: 600;
-  letter-spacing: 2.5rem;
-
-  animation-name: moveInLeft;
-  animation-duration: 2s;
 
 
-  /*
-   animation-iteration-count: 2
-  */
-}
-
-.heading-primary--sub{
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  font-family: 'Gloria Hallelujah', cursive;
-  text-transform: lowercase;
-
-  animation-name: moveInRight;
-  animation-duration: 2s;
-
-}
-
-.header__text-box{
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s;
-  position: relative;
-}
-
-.btn--animated {
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2)
-}
-
-/*When we click*/
-.btn:active{
-  transform: translateY(-1px);
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2)
-}
-
-.btn-white {
-  background-color: white;
-  color: grey;
-}
-
-/* Button effect */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s;
-}
-
-.btn-white::after {
-  background-color: white;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0;
-}
-
-/*
-**  KEYFRAMES ANIMATION  ----------------------------------------------
-*/
-
-@keyframes moveInLeft {
-   0% {
-     opacity: 0;
-     transform: translateX(-10rem)
-   }
-
-   75% {
-     opacity: 0.5;
-     transform: translateX(2rem)
-   }
-
-   100% {
-     opacity: 1;
-     transform: translate(0);
-   }
- }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem)
-  }
-
-  75% {
-    opacity: 0.5;
-    transform: translateX(2rem)
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
 
 
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem)
-  }
 
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}

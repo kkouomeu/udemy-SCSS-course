@@ -1,0 +1,16 @@
+
+/* //////// rem to pixel function
+
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{remValue}rem";
+}
+
+------Example of using
+p {
+    .font-size(1.2);
+}
+////////////////////
+*/
