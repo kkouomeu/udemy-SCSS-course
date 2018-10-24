@@ -3,7 +3,7 @@ Always use position relative, to the parent element which
 we want to set absolute postion
 
 
-/* //////// rem to pixel function
+-------- rem to pixel function
 
 .font-size(@sizeValue) {
   @remValue: @sizeValue;
@@ -12,17 +12,29 @@ we want to set absolute postion
   font-size: ~"@{remValue}rem";
 }
 
-------Example of using
+---- Example of using
 p {
     .font-size(1.2);
 }
-*/
 
 
-/* //////// Center element code
 
-  /* ---- Center an element in the parent element 
+
+//////// Center element code
+
+ ---- Center an element in the parent element
   top: 50%;
   left: 50%;
   transform: translate( -50% , -50% );
+
+
+
+
+/* //////// Transition
+We can had transition on trasnform, opacity ... and all
+
+ex :transition: transform .8s;
+ex :  transition: all .8s;
+
+
 ---- */
