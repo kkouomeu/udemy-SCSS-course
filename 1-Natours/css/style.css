@@ -169,17 +169,20 @@ body {
     padding: 6rem; }
 
 .btn {
+  /* button animation on hover */
   /*When we click*/
   /* Button effect */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
-    transition: all .2s;
+    transition: all .35s;
     position: relative;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
   .btn--animated {
     animation-name: moveInBottom;
     animation-duration: 1s; }
@@ -189,7 +192,8 @@ body {
     .btn:hover::after {
       transform: scaleX(1.5) scaleY(1.6);
       opacity: 0; }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn-white {
@@ -293,7 +297,7 @@ body {
     color: white;
     height: 50rem;
     font-size: 2rem;
-    transition: all 1s ease;
+    transition: all .7s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -444,7 +448,10 @@ body {
     object-fit: cover; }
 
 .form {
-  /* Using cybling selector SCSS (label needs to be after the input to use "+") */ }
+  /* Using sibling selector SCSS (label selector needs to be after the input selector to use "+") 
+      -- Use "placeholder-shown" to add css effect on input keypress 
+      */
+  /* Sibling selector "~" because radio-button is not child element of radio-input  */ }
   .form__group:not(:last-child) {
     margin-bottom: 2rem; }
   .form__input {
@@ -476,6 +483,42 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
+  .form__radio-group {
+    width: 48%;
+    display: inline-block; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: solid 4px #5075d5;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -.4rem;
+    left: 0; }
+    .form__radio-button::after {
+      content: "";
+      display: block;
+      height: 1.1rem;
+      width: 1.1rem;
+      border-radius: 50%;
+      position: absolute;
+      /* ---- Center an element in the parent element --- */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* -------- */
+      background-color: #5075d5;
+      opacity: 0;
+      transition: opacity .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
 
 .header {
   height: 95vh;

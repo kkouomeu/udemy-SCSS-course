@@ -1,3 +1,7 @@
+/* //////// Positioning
+Always use position relative, to the parent element which
+we want to set absolute postion
+
 
 /* //////// rem to pixel function
 
@@ -12,5 +16,13 @@
 p {
     .font-size(1.2);
 }
-////////////////////
 */
+
+
+/* //////// Center element code
+
+  /* ---- Center an element in the parent element 
+  top: 50%;
+  left: 50%;
+  transform: translate( -50% , -50% );
+---- */
