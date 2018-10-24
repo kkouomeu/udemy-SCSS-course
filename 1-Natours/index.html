@@ -17,7 +17,7 @@
 
 <body>
 
-    <!-- NAVIGATION MUST BE THE FIRST ELEMENT IN THE DOM -->
+    <!-- NAVIGATION MUST BE THE FIRST ELEMENT IN THE BODY (DOM) -->
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
@@ -26,10 +26,16 @@
         <div class="navigation__background">&nbsp;</div>
 
         <nav class="navigation__nav">
-            
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natours</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your Benefits</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Tours</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book Now</a></li>
+            </ul>
         </nav>
     </div>
-    <!-- ----------------------------------------------- -->
+    <!-- ------------------------------------------------------ -->
 
 
     <header class="header">
@@ -369,8 +375,8 @@
     </footer>
 
 
-    <!--  ////////////////// BUILDING A GRID SYSTEM ( like Bootstrap ) WITH grid.scss /////////////////
-        
+  <!--  BUILDING A GRID SYSTEM ( like Bootstrap ) WITH grid.scss  -->
+  <!--
         <section class="grid-test">
 
         &lt;!&ndash; 1/2 - 1/2 columns &ndash;&gt;
