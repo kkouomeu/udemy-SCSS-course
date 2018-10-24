@@ -469,7 +469,7 @@ body {
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
       border-bottom: 3px solid #55c57a; }
     .form__input:focus:invalid {
-      border-bottom: 3px solid #ed4541; }
+      border-bottom: 3px solid #ed4542; }
     .form__input::-webkit-input-placeholder {
       color: #777; }
   .form__label {
@@ -572,5 +572,42 @@ body {
     width: calc(2 * (( 100% - (6rem * 3)) / 4) + 6rem); }
   .row .col-3-of-4 {
     width: calc(3 * (( 100% - (6rem * 3)) / 4) + ( 2 * 6rem)); }
+
+.footer {
+  background-color: #151e2d;
+  padding: 10rem 0;
+  font-size: 1.4rem; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    border-top: 1px solid #ededed;
+    padding-top: 2rem;
+    /* "inline-block" is use to take only the place de div needs*/
+    display: inline-block; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__list {
+    list-style: none; }
+  .footer__copyright {
+    border-top: 1px solid #ededed;
+    padding-top: 2rem;
+    display: inline-block;
+    width: 90%; }
+  .footer__link:link, .footer__link:visited {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transform: rotate(5deg) scale(1.1); }
 
 /*----------- end Imports ----------*/
