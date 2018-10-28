@@ -6,11 +6,42 @@
   box-sizing: inherit;
 }
 
+
 /* Defining the default font-size*/
-/*  1 rem = 10px*/
+/*  1 rem = 10px */
+
+
+/*
+**
+      !!!! always put the media queries in screen order to not have conflict with screen size !!!!!
+**
+*/
+
 html {
-  font-size: 62.5%;
+
+  font-size: 62.5%; //normal width
+
+  @include respond(big-desktop) { //width > 1800?
+    font-size: 80%;
+  }
+
+  @include respond(tab-land) {  //width < 1200?
+    font-size: 70%;
+  }
+
+  @include respond(tab-port) { //width < 900?
+    font-size: 50%;
+  }
+
+  @include respond(phone) { //width < 600?
+    font-size: 35%;
+  }
+
+
 }
+
+
+
 
 /* Defining the default font-family, font-size*/
 body{
@@ -22,4 +53,11 @@ body{
   padding: 2rem;
 
   box-sizing: border-box;
+
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
 }
+
