@@ -19,6 +19,16 @@
     box-shadow: 0 1rem 5rem rgba($color-black, .1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 2rem;
+      right: 2rem;
+    }
+
+    @include respond(phone) {
+      top: 1rem;
+      right: 1rem;
+    }
   }
 
 
@@ -36,6 +46,16 @@
     z-index: 80;
     transition: transform .8s cubic-bezier(0.86,0,0.07,1);
 
+
+    @include respond(tab-port) {
+      top: 2.5rem;
+      right: 2.5rem;
+    }
+
+    @include respond(phone) {
+      top: 1.5rem;
+      right: 1.5rem;
+    }
 
     //transform: scale(100);
   }

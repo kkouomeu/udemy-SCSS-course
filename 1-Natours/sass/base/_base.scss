@@ -6,10 +6,8 @@
   box-sizing: inherit;
 }
 
-
 /* Defining the default font-size*/
 /*  1 rem = 10px */
-
 
 /*
 **
@@ -19,18 +17,18 @@
 
 html {
 
-  font-size: 62.5%; //normal width
+  font-size: 62.5%; //normal width [1200 - 1800]
 
   @include respond(big-desktop) { //width > 1800?
-    font-size: 80%;
-  }
-
-  @include respond(tab-land) {  //width < 1200?
     font-size: 70%;
   }
 
+  @include respond(tab-land) {  //width < 1200?
+    font-size: 60%;
+  }
+
   @include respond(tab-port) { //width < 900?
-    font-size: 50%;
+    font-size: 55%;
   }
 
   @include respond(phone) { //width < 600?
@@ -41,8 +39,6 @@ html {
 }
 
 
-
-
 /* Defining the default font-family, font-size*/
 body{
   font-family: "Lato", sans-serif;
@@ -50,7 +46,7 @@ body{
   font-size: 16px;
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 2rem;
+  padding: 1rem;
 
   box-sizing: border-box;
 

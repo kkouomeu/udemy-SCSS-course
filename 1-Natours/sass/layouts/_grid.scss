@@ -6,7 +6,19 @@
   /* select everything except the last child */
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    /* ------- Reduce bottom margin on small screen  ------- */
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+     }
   }
+
+ /* ------- Reduce the grid when we are on small screens  ------- */
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 1rem;
+   }
+/* ---------------------------------------------------------------- */
 
   @include clearfix;
 
@@ -21,6 +33,16 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      /* ------- Delete the margin on small screens  ------- */
+      @include respond(tab-port) {
+       margin-right: 0;
+       margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 
