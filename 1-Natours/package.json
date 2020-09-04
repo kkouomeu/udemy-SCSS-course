@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.3.1",
-    "node-sass": "^4.9.4"
+    "node-sass": "^4.13.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.3.1",
